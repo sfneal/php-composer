@@ -1,0 +1,4 @@
+FROM composer:1.8.6
+
+# Install PHP-GD extension (required by phpoffice/phpspreadsheet)
+RUN apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libzip-dev
