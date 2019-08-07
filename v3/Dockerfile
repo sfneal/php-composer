@@ -5,12 +5,13 @@ FROM php:7.3.6
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install yarn & other deps
-RUN apt-get install -y \
-    zip \
-    unzip \
-    libfreetype6-dev \
-    libjpeg62-turbo-dev \
-    libzip-dev
+RUN apt-get update \
+    && apt-get install -y \
+        zip \
+        unzip \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libzip-dev
 
 # Install PHP-GD extension (required by phpoffice/phpspreadsheet)
 RUN docker-php-ext-configure gd \
