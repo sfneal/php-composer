@@ -10,15 +10,18 @@ RUN apt-get update \
         zip \
         unzip \
         libfreetype6-dev \
+		libgmp-dev \
         libjpeg62-turbo-dev \
-        libzip-dev \
-		libgmp-dev
+        libpng-dev \
+        libxpm-dev \
+        libwebp-dev \
+        libzip-dev
 
 # Install PHP-GD extension (required by phpoffice/phpspreadsheet)
 RUN docker-php-ext-configure gd \
-    --with-freetype-dir=/usr/include/ \
-    --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd \
+		--with-freetype=/usr/include/ \
+		--with-jpeg=/usr/include/ \
+	&& docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install \
         pdo \
         pdo_mysql \
