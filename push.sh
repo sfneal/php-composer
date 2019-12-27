@@ -7,3 +7,4 @@ sh "${DIR}"/build.sh
 docker push stephenneal/php-composer:7.3-v1
 docker push stephenneal/php-composer:7.3-v2
 docker push stephenneal/php-composer:7.3-v3
+docker push stephenneal/php-composer:7.4-v1
