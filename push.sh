@@ -9,3 +9,4 @@ docker push stephenneal/php-composer:7.3-v2
 docker push stephenneal/php-composer:7.3-v3
 docker push stephenneal/php-composer:7.4-v1
 docker push stephenneal/php-composer:7.4-v2
+docker push stephenneal/php-composer:7.4-v3
