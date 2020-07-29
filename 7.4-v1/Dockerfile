@@ -23,6 +23,7 @@ RUN docker-php-ext-configure gd \
 		--with-jpeg=/usr/include/ \
 	&& docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install \
+        pcntl \
         pdo \
         pdo_mysql \
         zip \

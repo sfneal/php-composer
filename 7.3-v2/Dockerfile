@@ -20,6 +20,7 @@ RUN docker-php-ext-install -j$(nproc) \
 
 # Install Docker PHP extensions
 RUN docker-php-ext-install \
+	pcntl \
 	pdo \
 	pdo_mysql \
 	zip \

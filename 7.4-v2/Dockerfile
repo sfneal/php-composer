@@ -29,6 +29,7 @@ RUN docker-php-ext-configure intl \
     && docker-php-ext-install \
         gmp \
         intl \
+        pcntl \
         pdo \
         pdo_mysql \
         zip
