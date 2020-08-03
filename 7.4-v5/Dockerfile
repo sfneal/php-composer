@@ -5,6 +5,7 @@ MAINTAINER Stephen Neal <stephen@stephenneal.net>
 RUN apt-get update -y \
     && apt-get install -y \
         g++ \
+        imagemagick \
         libfreetype6-dev \
 		libgmp-dev \
 		libicu-dev \
@@ -13,6 +14,7 @@ RUN apt-get update -y \
         libxpm-dev \
         libwebp-dev \
         libzip-dev \
+        php-imagick \
         unzip \
         zip \
         zlib1g-dev
