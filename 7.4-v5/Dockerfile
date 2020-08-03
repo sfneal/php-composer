@@ -14,7 +14,6 @@ RUN apt-get update -y \
         libxpm-dev \
         libwebp-dev \
         libzip-dev \
-        php-imagick \
         unzip \
         zip \
         zlib1g-dev
