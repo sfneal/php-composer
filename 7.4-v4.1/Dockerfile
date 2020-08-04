@@ -18,7 +18,7 @@ RUN apt-get update -y \
         zip \
         zlib1g-dev
 
-# Install PHP-GD extension
+# Install Docker PHP extensions
 RUN docker-php-ext-configure intl \
 	&& docker-php-ext-configure gd \
 		--with-freetype=/usr/include/ \
