@@ -13,3 +13,4 @@ docker build -t stephenneal/php-composer:7.4-v5 "${DIR}"/7.4-v5/
 docker build -t stephenneal/php-composer:8.0-rc-v1 "${DIR}"/8.0-rc-v1/
 docker build -t stephenneal/php-composer:8.0-rc-v1.1 "${DIR}"/8.0-rc-v1.1/
 docker build -t stephenneal/php-composer:8.0-rc-v2 "${DIR}"/8.0-rc-v2/
+docker build -t stephenneal/php-composer:8.0-v1 "${DIR}"/8.0-v1/
