@@ -35,4 +35,5 @@ script:
   - sh build.sh ${TAG}
 
 after_script:
+  - docker system prune -f
   - docker images
