@@ -1,11 +1,10 @@
-FROM php:8.0-rc-cli
+FROM php:rc-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install dependencies
 RUN apt-get update -y \
     && apt-get install -y \
         g++ \
-        imagemagick \
         libfreetype6-dev \
 		libgmp-dev \
 		libicu-dev \
@@ -18,7 +17,7 @@ RUN apt-get update -y \
         zip \
         zlib1g-dev
 
-# Install PHP-GD extension (required by phpoffice/phpspreadsheet)
+# Install Docker PHP extensions
 RUN docker-php-ext-configure intl \
 	&& docker-php-ext-configure gd \
 		--with-freetype=/usr/include/ \
@@ -33,4 +32,4 @@ RUN docker-php-ext-configure intl \
         zip
 
 # Install composer from the composer base image
-COPY --from=composer:1 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer

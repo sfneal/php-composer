@@ -1,4 +1,4 @@
-FROM php:8.0-rc-cli
+FROM php:rc-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install dependencies
@@ -32,4 +32,4 @@ RUN docker-php-ext-configure intl \
         zip
 
 # Install composer from the composer base image
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:1 /usr/bin/composer /usr/bin/composer

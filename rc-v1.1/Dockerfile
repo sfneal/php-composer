@@ -1,10 +1,11 @@
-FROM php:8.0-rc-cli
+FROM php:rc-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install dependencies
 RUN apt-get update -y \
     && apt-get install -y \
         g++ \
+        imagemagick \
         libfreetype6-dev \
 		libgmp-dev \
 		libicu-dev \
@@ -17,7 +18,7 @@ RUN apt-get update -y \
         zip \
         zlib1g-dev
 
-# Install Docker PHP extensions
+# Install PHP-GD extension (required by phpoffice/phpspreadsheet)
 RUN docker-php-ext-configure intl \
 	&& docker-php-ext-configure gd \
 		--with-freetype=/usr/include/ \
