@@ -24,9 +24,9 @@ env:
 
 jobs:
   allow_failures:
-    - env: TAG=TAG=rc-v1
-    - env: TAG=TAG=rc-v1.1
-    - env: TAG=TAG=rc-v2
+    - env: TAG=rc-v1
+    - env: TAG=rc-v1.1
+    - env: TAG=rc-v2
 
 before_script:
   - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
