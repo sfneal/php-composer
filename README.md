@@ -1,4 +1,4 @@
-# stephenneal/php-composer
+# sfneal/php-composer
 
 [![Build Status](https://travis-ci.com/sfneal/php-composer.svg?branch=master&style=flat-square)](https://travis-ci.com/sfneal/php-composer)
 [![Total Downloads](https://img.shields.io/docker/pulls/stephenneal/php-composer?style=flat-square)](https://hub.docker.com/r/stephenneal/php-composer)
