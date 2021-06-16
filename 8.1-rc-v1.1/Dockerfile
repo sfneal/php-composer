@@ -1,4 +1,4 @@
-FROM php:rc-cli
+FROM php:8.1-rc-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install dependencies
