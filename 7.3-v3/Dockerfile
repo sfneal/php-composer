@@ -5,7 +5,7 @@ FROM php:7.3-stretch
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install yarn & other deps
-RUN apt-get update \
+RUN apt-get update -y \
     && apt-get install -y \
 		libgmp-dev \
         libfreetype6-dev \

@@ -2,7 +2,7 @@ FROM php:7.4-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install yarn & other deps
-RUN apt-get update \
+RUN apt-get update -y \
     && apt-get install -y \
         libfreetype6-dev \
 		libgmp-dev \
