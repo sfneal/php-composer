@@ -19,7 +19,7 @@ RUN apt-get update -y \
 
 # Install Docker PHP extensions
 RUN docker-php-ext-configure intl  \
-    && docker-php-ext-configure gd \
+  && docker-php-ext-configure gd \
 	    --with-freetype=/usr/include/ \
 	    --with-jpeg=/usr/include/ \
 	&& docker-php-ext-install -j$(nproc) \
