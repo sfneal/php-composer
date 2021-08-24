@@ -1,6 +1,3 @@
-# Start with the official Composer image and name it
-FROM composer:1.9 AS composer
-
 FROM php:7.4-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
@@ -33,4 +30,4 @@ RUN docker-php-ext-install \
     zip
 
 # Install composer from the composer base image
-COPY --from=composer /usr/bin/composer /usr/bin/composer
+COPY --from=composer:1.9 /usr/bin/composer /usr/bin/composer
