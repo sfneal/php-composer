@@ -1,3 +1,5 @@
+sudo: required
+
 language: ruby
 
 services:
@@ -40,7 +42,7 @@ before_script:
   - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
 
 script:
-  - bash build.sh "${TAG}"
+  - sudo sh build.sh "${TAG}"
 
 after_script:
   - docker images
