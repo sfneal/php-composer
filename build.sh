@@ -11,13 +11,7 @@ if [ "$TAG" != null ]
 
   # Only build one image
   then
-    # todo: remove after confirming this works
-    LATEST=$(echo "${TAG::3}")
-    echo stephenneal/php-composer:"${LATEST}"
-
     docker build -t stephenneal/php-composer:"${TAG}" "${DIR}"/"${TAG}"/
-
-    docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${LATEST}"
 
   # Build all images
   else
