@@ -15,17 +15,17 @@ RUN apt-get update -y \
         zip
 
 # Install PHP-GD extension (required by phpoffice/phpspreadsheet)
+RUN docker-php-ext-configure gd \
+    --with-freetype=/usr/include/ \
+    --with-jpeg=/usr/include/
+RUN docker-php-ext-install -j$(nproc) \
+    gd
 RUN docker-php-ext-install \
 	gmp \
     pcntl \
     pdo \
     pdo_mysql \
     zip
-RUN docker-php-ext-configure gd \
-    --with-freetype-dir=/usr/include/ \
-    --with-jpeg-dir=/usr/include/
-RUN docker-php-ext-install -j$(nproc) \
-    gd
 
 # Install composer from the composer base image
 COPY --from=composer:1.9 /usr/bin/composer /usr/bin/composer
