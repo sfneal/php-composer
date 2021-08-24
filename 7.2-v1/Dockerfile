@@ -18,10 +18,10 @@ RUN apt-get update -y \
         zlib1g-dev
 
 # Install Docker PHP extensions
-RUN docker-php-ext-configure gd
-RUN docker-php-ext-install -j$(nproc) gd
-RUN docker-php-ext-configure intl
-RUN docker-php-ext-install \
+RUN docker-php-ext-configure intl \
+	&& docker-php-ext-configure gd \
+	&& docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install \
         gmp \
         intl \
         pcntl \
