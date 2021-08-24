@@ -1,4 +1,4 @@
-FROM php:7.4-stretch
+FROM php:7.4-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install dependencies
