@@ -7,12 +7,12 @@ MAINTAINER Stephen Neal <stephen@stephenneal.net>
 # Install yarn & other deps
 RUN apt-get update \
     && apt-get install -y \
-        zip \
-        unzip \
+		libgmp-dev \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libzip-dev \
-		libgmp-dev
+        unzip \
+        zip
 
 # Install PHP-GD extension (required by phpoffice/phpspreadsheet)
 RUN docker-php-ext-configure gd \
@@ -20,11 +20,11 @@ RUN docker-php-ext-configure gd \
     --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install \
+		gmp \
         pcntl \
         pdo \
         pdo_mysql \
-        zip \
-		gmp
+        zip
 
 # Install composer from the composer base image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
