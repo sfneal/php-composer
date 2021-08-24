@@ -15,7 +15,7 @@ RUN apt-get update -y \
         zip
 
 # Install PHP-GD extension (required by phpoffice/phpspreadsheet)
-RUN docker-php-ext-install -j$(nproc) \
+RUN docker-php-ext-install \
 	gmp \
     pcntl \
     pdo \
