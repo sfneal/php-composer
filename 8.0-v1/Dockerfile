@@ -18,16 +18,19 @@ RUN apt-get update -y \
         zlib1g-dev
 
 # Install Docker PHP extensions
-RUN docker-php-ext-configure intl \
-	&& docker-php-ext-configure gd \
-	&& docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install \
+RUN docker-php-ext-install -j$(nproc) \
         gmp \
         intl \
         pcntl \
         pdo \
         pdo_mysql \
-        zip
+        zip \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-configure gd \
+    	--with-freetype-dir=/usr/include/ \
+    	--with-jpeg-dir=/usr/include/
+    && docker-php-ext-install -j$(nproc) \
+    	gd
 
 # Install composer from the composer base image
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
