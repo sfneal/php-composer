@@ -10,13 +10,20 @@ if [ "$TAG" != null ]
 
   # Only build & push one image
   then
-    sh "${DIR}"/build.sh "${TAG}"
+    bash "${DIR}"/build.sh "${TAG}"
+
     docker push stephenneal/php-composer:"${TAG}"
+
+    LATEST=$(echo "${TAG::3}")
+    docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${LATEST}"
+    docker push stephenneal/php-composer:"${LATEST}"
 
   # Build & push all images
   else
-    sh "${DIR}"/build.sh
+    bash "${DIR}"/build.sh
 
+    docker push stephenneal/php-composer:7.1-v1
+    docker push stephenneal/php-composer:7.2-v1
     docker push stephenneal/php-composer:7.3-v1
     docker push stephenneal/php-composer:7.3-v2
     docker push stephenneal/php-composer:7.3-v3
