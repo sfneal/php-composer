@@ -1,4 +1,4 @@
-language: ruby
+language: bash
 
 services:
   - docker
@@ -32,13 +32,13 @@ before_script:
   - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
 
 script:
-  - sh build.sh "${TAG}"
+  - bash build.sh "${TAG}"
 
 after_script:
   - docker images
 
 deploy:
   provider: script
-  script: sh push.sh "${TAG}"
+  script: bash push.sh "${TAG}"
   on:
     tags: true
