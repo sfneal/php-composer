@@ -1,4 +1,4 @@
-FROM php:7.4-cli
+FROM php:7.4-stretch
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install yarn & other deps
@@ -16,8 +16,8 @@ RUN apt-get update -y \
 
 # Install PHP-GD extension (required by phpoffice/phpspreadsheet)
 RUN docker-php-ext-configure gd \
-    --with-freetype=/usr/include/ \
-    --with-jpeg=/usr/include/
+    --with-freetype-dir=/usr/include/ \
+    --with-jpeg-dir=/usr/include/
 RUN docker-php-ext-install -j$(nproc) gd
 RUN docker-php-ext-install \
 	gmp \
