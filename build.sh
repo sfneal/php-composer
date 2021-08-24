@@ -13,10 +13,6 @@ if [ "$TAG" != null ]
   then
     docker build -t stephenneal/php-composer:"${TAG}" "${DIR}"/"${TAG}"/
 
-    # todo: remove after confirming this works
-    LATEST=$(echo "${TAG::5}")
-    docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${LATEST}"
-
   # Build all images
   else
     docker build -t stephenneal/php-composer:7.3-v1 "${DIR}"/7.3-v1/
