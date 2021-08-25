@@ -16,6 +16,7 @@ env:
     - TAG=7.3-v1
     - TAG=7.3-v2
     - TAG=7.3-v3
+    - TAG=7.3-v4
     - TAG=7.4-v1
     - TAG=7.4-v2
     - TAG=7.4-v4
