@@ -46,7 +46,7 @@ script:
   - sudo sh build.sh "${TAG}"
 
 after_script:
-  - docker images
+  - docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}}\t{{.Size}}'
 
 deploy:
   provider: script
