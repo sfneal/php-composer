@@ -1,4 +1,4 @@
-FROM php:8.0-cli
+FROM php:7.2-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install dependencies
@@ -18,19 +18,16 @@ RUN apt-get update -y \
         zlib1g-dev
 
 # Install Docker PHP extensions
-RUN docker-php-ext-install -j$(nproc) \
+RUN docker-php-ext-configure intl \
+	&& docker-php-ext-configure gd \
+	&& docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install \
         gmp \
         intl \
         pcntl \
         pdo \
         pdo_mysql \
-        zip \
-    && docker-php-ext-configure intl \
-    && docker-php-ext-configure gd \
-    	--with-freetype=/usr/include/ \
-    	--with-jpeg=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) \
-    	gd
+        zip
 
 # Install composer from the composer base image
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer

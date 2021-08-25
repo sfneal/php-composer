@@ -21,16 +21,17 @@ RUN apt-get update -y \
 # Install Docker PHP extensions
 RUN docker-php-ext-configure intl \
 	&& docker-php-ext-configure gd \
-		--with-freetype=/usr/include/ \
-		--with-jpeg=/usr/include/ \
-	&& docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install \
-        gmp \
-        intl \
-        pcntl \
-        pdo \
-        pdo_mysql \
-        zip
+	    --with-freetype=/usr/include/ \
+	    --with-jpeg=/usr/include/ \
+	&& docker-php-ext-install -j$(nproc) \
+    	gd \
+	&& docker-php-ext-install \
+	    gmp \
+	    intl \
+	    pcntl \
+	    pdo \
+	    pdo_mysql \
+	    zip
 
 # Install composer from the composer base image
 COPY --from=composer:1 /usr/bin/composer /usr/bin/composer
