@@ -1,3 +1,4 @@
+# PHP 8 composer image that includes system dependencies for the spatie/medialibrary composer package
 FROM php:8.0-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
@@ -20,6 +21,7 @@ RUN apt-get update -y \
 # Install Docker PHP extensions
 RUN docker-php-ext-install -j$(nproc) \
         gmp \
+    	exif \
         intl \
         pcntl \
         pdo \
