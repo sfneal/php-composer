@@ -23,6 +23,7 @@ env:
     - TAG=7.4-v4.1
     - TAG=7.4-v5
     - TAG=8.0-v1
+    - TAG=8.0-v2
     - TAG=8.1-rc-v1
     - TAG=8.1-rc-v1.1
     - TAG=8.1-rc-v2
