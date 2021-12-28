@@ -28,6 +28,8 @@ if [ "$TAG" != null ]
     docker build -t stephenneal/php-composer:7.4-v5 "${DIR}"/7.4-v5/
     docker build -t stephenneal/php-composer:8.0-v1 "${DIR}"/8.0-v1/
     docker build -t stephenneal/php-composer:8.0-v2 "${DIR}"/8.0-v2/
+    docker build -t stephenneal/php-composer:8.1-v1 "${DIR}"/8.1-v1/
+    docker build -t stephenneal/php-composer:8.1-v2 "${DIR}"/8.1-v2/
     docker build -t stephenneal/php-composer:8.1-rc-v1 "${DIR}"/8.1-rc-v1/
     docker build -t stephenneal/php-composer:8.1-rc-v1.1 "${DIR}"/8.1-rc-v1.1/
     docker build -t stephenneal/php-composer:8.1-rc-v2 "${DIR}"/8.1-rc-v2/
