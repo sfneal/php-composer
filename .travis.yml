@@ -11,19 +11,19 @@ env:
     - secure: BZaAwlmN5/WKnCZjed8G9FgVFHOzTFoOU1gBOOPmMRVyYZJBPt6Vsya0bR1F6QZjWAsFIVfZ28YpphHtJmuax0150VuCJv/jm1Hf4i5hYsKyl4GlrqiM4FeHJKdwZgAwVyl+ApPwiMjO3KTfAv3zB3wjz3qyir3L8sAW0m1ZYXiueIwIRB+QzsV6J+9ZSoO+PsrnXvqZZk5j/FFAVBfoBZOM0u3jiDyBg8ckmFkAPmZ2n7KuvUT8V8NlZxyzmIe8J/Opf7W8Zq0Q2d731jtnaBI7nfxY2DV7sDB7GfUlxujqpCO7ITqZejuEV01Twon0KXLaeZnhckrfBxXsuaXci34OxKUhgEyk1iU/Z3iI86vqgjFQd1VxhmsrMHxb7bV/HXOLGE5Sfuu1h9siU/MzKt2kwj/FICcZ1dY3TSLkTPfteiBwDemc/mtkbv01UVf50qFAfxyPgVMQT7YTCuYNbnlPj25oi0DYaecMTrhDbhlJSFq1Gu1QlmLd1FNbIR5TU6qWofOwPaezot4KowQc6yEOvsDtmp5uUhd4qtWxhMk/cJP8afojaycCC3U2jgl+ljaQ2VfsgQcfLl2v25gf1PEMYWxzYPQc21Xzxd8aTjKb/H+2UcDxbMuxhWNaZhbHL2NC8Ohy0+oXD+s8zlgixL+3P+LF0REdZzMltyKuSI0=
 
   matrix:
-    - TAG=7.1-v1
-    - TAG=7.2-v1
-    - TAG=7.3-v1
-    - TAG=7.3-v2
-    - TAG=7.3-v3
-    - TAG=7.3-v4
-    - TAG=7.4-v1
-    - TAG=7.4-v2
-    - TAG=7.4-v4
-    - TAG=7.4-v4.1
-    - TAG=7.4-v5
-    - TAG=8.0-v1
     - TAG=8.0-v2
+    - TAG=8.0-v1
+    - TAG=7.4-v5
+    - TAG=7.4-v4.1
+    - TAG=7.4-v4
+    - TAG=7.4-v2
+    - TAG=7.4-v1
+    - TAG=7.3-v4
+    - TAG=7.3-v3
+    - TAG=7.3-v2
+    - TAG=7.3-v1
+    - TAG=7.2-v1
+    - TAG=7.1-v1
     - TAG=8.1-rc-v1
     - TAG=8.1-rc-v1.1
     - TAG=8.1-rc-v2
