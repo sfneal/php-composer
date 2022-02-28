@@ -33,9 +33,6 @@ jobs:
             -   name: Build Docker Image
                 run: sh build.sh ${{ matrix.tag }}
 
-            -   name: Push Docker Image
-                run: sh push.sh ${{ matrix.tag }}
-
             -   name: Push Docker Image (latest)
                 run: sh push.sh ${{ matrix.tag }} true
 
