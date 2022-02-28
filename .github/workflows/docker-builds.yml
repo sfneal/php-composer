@@ -1,0 +1,49 @@
+name: docker
+
+on: [push, pull_request]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        strategy:
+            fail-fast: false
+            matrix:
+                os: [ubuntu-latest]
+                tag: [
+                    8.1-v1,
+                    8.1-v2,
+                    8.0-v1,
+                    8.0-v2,
+                    7.4-v1,
+                    7.4-v2,
+                    7.4-v4,
+                    7.4-v4.1,
+                    7.4-v5,
+                    7.3-v1,
+                    7.3-v2,
+                    7.3-v3,
+                    7.3-v4,
+                    7.2-v1,
+                    7.1-v1,
+                    8.1-rc-v1,
+                    8.1-rc-v1.1,
+                    8.1-rc-v2
+                ]
+
+        name: TAG-{{ matrix.php }}
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v1
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php }}
+                    coverage: none
+
+            -   name: Build Docker Images
+                run: sh build.sh ${{ matrix.tag }}
+
+            -   name: Show Docker Images
+                run: docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}}\t{{.Size}}'
