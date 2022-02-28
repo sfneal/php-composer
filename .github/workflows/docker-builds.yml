@@ -30,7 +30,7 @@ jobs:
                     8.1-rc-v2
                 ]
 
-        name: TAG-{{ matrix.php }}
+        name: TAG-{{ matrix.tag }}
 
         steps:
             -   name: Checkout code
