@@ -19,8 +19,8 @@ if [ "$TAG" != null ]
 
     # Confirm the Tag is NOT an Release Candidate before pushing
     if [ "$PUSH_LATEST" != null ]; then
-        docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${TAG::3}"
-        docker push stephenneal/php-composer:"${TAG::3}"
+        docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${TAG:0:3}"
+        docker push stephenneal/php-composer:"${TAG:0:3}"
     fi
 
 
