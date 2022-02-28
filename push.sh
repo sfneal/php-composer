@@ -5,6 +5,9 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # Optional TAG argument (if set, only the specified image will be built)
 TAG=${1:-null}
 
+# Optionally push a 'latest' tag
+PUSH_LATEST=${2:-null}
+
 # Check if the TAG variable is set
 if [ "$TAG" != null ]
 
@@ -15,7 +18,7 @@ if [ "$TAG" != null ]
     docker push stephenneal/php-composer:"${TAG}"
 
     # Confirm the Tag is NOT an Release Candidate before pushing
-    if [[ "$TAG" != *"rc"* ]]; then
+    if [ "$PUSH_LATEST" != null ]; then
         LATEST=$(echo "${TAG::3}")
         docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${LATEST}"
         docker push stephenneal/php-composer:"${LATEST}"

@@ -1,6 +1,8 @@
-name: docker-builds
+name: docker-push
 
-on: [push, pull_request]
+on:
+  release:
+    types: [published]
 
 jobs:
     test:
@@ -10,23 +12,11 @@ jobs:
             matrix:
                 os: [ubuntu-latest]
                 tag: [
-                    8.1-v1,
                     8.1-v2,
-                    8.0-v1,
                     8.0-v2,
-                    7.4-v1,
-                    7.4-v2,
-                    7.4-v4,
-                    7.4-v4.1,
                     7.4-v5,
-                    7.3-v1,
-                    7.3-v2,
-                    7.3-v3,
                     7.3-v4,
-                    7.2-v1,
                     7.1-v1,
-                    8.1-rc-v1,
-                    8.1-rc-v1.1,
                     8.1-rc-v2
                 ]
 
@@ -41,6 +31,12 @@ jobs:
 
             -   name: Build Docker Image
                 run: sh build.sh ${{ matrix.tag }}
+
+            -   name: Push Docker Image
+                run: sh push.sh ${{ matrix.tag }}
+
+            -   name: Push Docker Image (latest)
+                run: sh push.sh ${{ matrix.tag }}
 
             -   name: Show Docker Images
                 run: docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}}\t{{.Size}}'
