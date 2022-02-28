@@ -14,9 +14,13 @@ if [ "$TAG" != null ]
 
     docker push stephenneal/php-composer:"${TAG}"
 
-    LATEST=$(echo "${TAG::3}")
-    docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${LATEST}"
-    docker push stephenneal/php-composer:"${LATEST}"
+    # Confirm the Tag is NOT an Release Candidate before pushing
+    if [[ "$TAG" != *"rc"* ]]; then
+        LATEST=$(echo "${TAG::3}")
+        docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${LATEST}"
+        docker push stephenneal/php-composer:"${LATEST}"
+    fi
+
 
   # Build & push all images
   else
