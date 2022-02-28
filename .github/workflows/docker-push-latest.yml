@@ -36,7 +36,7 @@ jobs:
                 run: sh push.sh ${{ matrix.tag }}
 
             -   name: Push Docker Image (latest)
-                run: sh push.sh ${{ matrix.tag }}
+                run: sh push.sh ${{ matrix.tag }} true
 
             -   name: Show Docker Images
                 run: docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}}\t{{.Size}}'
