@@ -8,6 +8,9 @@ TAG=${1:-null}
 # Optionally push a 'latest' tag
 PUSH_LATEST=${2:-null}
 
+# Declare LATEST tag
+LATEST=${TAG::3}
+
 # Check if the TAG variable is set
 if [ "$TAG" != null ]
 
@@ -19,7 +22,6 @@ if [ "$TAG" != null ]
 
     # Confirm the Tag is NOT an Release Candidate before pushing
     if [ "$PUSH_LATEST" != null ]; then
-        LATEST="${TAG::3}"
         docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${LATEST}"
         docker push stephenneal/php-composer:"${LATEST}"
     fi
