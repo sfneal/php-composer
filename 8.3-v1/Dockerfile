@@ -1,4 +1,5 @@
-FROM php:7.2-cli
+# PHP 8 composer image that includes system dependencies for the spatie/medialibrary composer package
+FROM php:8.3-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install dependencies
@@ -18,16 +19,20 @@ RUN apt-get update -y \
         zlib1g-dev
 
 # Install Docker PHP extensions
-RUN docker-php-ext-configure intl \
-	&& docker-php-ext-configure gd \
-	&& docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install \
+RUN docker-php-ext-install -j$(nproc) \
         gmp \
+    	exif \
         intl \
         pcntl \
         pdo \
         pdo_mysql \
-        zip
+        zip \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-configure gd \
+    	--with-freetype=/usr/include/ \
+    	--with-jpeg=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) \
+    	gd
 
 # Install composer from the composer base image
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer

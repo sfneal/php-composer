@@ -28,3 +28,9 @@ RUN docker-php-ext-configure gd \
 
 # Install composer from the composer base image
 COPY --from=composer /usr/bin/composer /usr/bin/composer
+
+# Create a new group
+RUN groupadd -r phpusers && useradd -r -g phpusers user
+
+# Use the USER instruction to switch to the new user
+USER myuser
