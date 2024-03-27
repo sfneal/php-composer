@@ -51,6 +51,6 @@ if [ "$TAG" != null ]
     docker push stephenneal/php-composer:8.1-rc-v2
     docker push stephenneal/php-composer:8.2-v1
     docker push stephenneal/php-composer:8.2-v2
-#    docker push stephenneal/php-composer:8.3-v1
-#    docker push stephenneal/php-composer:8.3-v2
+    docker push stephenneal/php-composer:8.3-v1
+    docker push stephenneal/php-composer:8.3-v2
 fi
