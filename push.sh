@@ -33,7 +33,7 @@ if [ "$TAG" != null ]
 
     docker push stephenneal/php-composer:7.1-v1
     docker push stephenneal/php-composer:7.2-v1
-    docker push stephenneal/php-composer:7.3-v1
+#    docker push stephenneal/php-composer:7.3-v1
     docker push stephenneal/php-composer:7.3-v2
     docker push stephenneal/php-composer:7.3-v3
     docker push stephenneal/php-composer:7.3-v4
