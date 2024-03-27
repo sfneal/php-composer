@@ -1,7 +1,7 @@
 # Start with the official Composer image and name it
 FROM composer:1.9 AS composer
 
-FROM php:7.3-stretch
+FROM php:7.3.7-stretch
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Update OS

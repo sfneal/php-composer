@@ -1,4 +1,4 @@
-FROM php:7.3-stretch
+FROM php:7.3.7-stretch
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install yarn & other deps

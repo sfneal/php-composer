@@ -1,4 +1,4 @@
-FROM php:7.3.6
+FROM php:7.3.7
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Update OS
