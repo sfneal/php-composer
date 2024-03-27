@@ -23,4 +23,4 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN groupadd -r phpusers && useradd -r -g phpusers user
 
 # Use the USER instruction to switch to the new user
-USER myuser
+USER user

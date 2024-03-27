@@ -30,4 +30,4 @@ COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
 RUN groupadd -r phpusers && useradd -r -g phpusers user
 
 # Use the USER instruction to switch to the new user
-USER myuser
+USER user
