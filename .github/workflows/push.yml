@@ -33,7 +33,7 @@ jobs:
                     8.3-medialibrary,
                 ]
 
-        name: TAG-${{ matrix.tag }}
+        name: ${{ matrix.tag }}
 
         steps:
             -   name: Checkout code
