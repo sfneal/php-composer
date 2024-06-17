@@ -11,6 +11,8 @@ if [ "$TAG" != null ]
 
   # Only build one image
   then
+    FILE="${DIR}"/"${TAG}"/_docker-tags.txt
+
     # Check if image has multiple tags (indicated by file existence)
     if [ -f "${FILE}" ]; then
       echo "${TAG} directory has multiple Docker tags"
