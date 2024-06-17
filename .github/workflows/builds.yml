@@ -10,24 +10,25 @@ jobs:
             matrix:
                 os: [ubuntu-latest]
                 tag: [
-                    7.1-v1
-                    7.2-v1
-                    7.3-v2
-                    7.3-v3
-                    7.3-v4
-                    7.4-v1
-                    7.4-v2
-                    7.4-v4
-                    7.4-v4.1
-                    7.4-v5
-                    8.0-base
-                    8.0-medialibrary
-                    8.1-base
-                    8.1-medialibrary
-                    8.2-base
-                    8.2-medialibrary
-                    8.3-base
-                    8.3-medialibrary
+                    7.1-v1,
+                    7.2-v1,
+    #               7.3-v1,
+                    7.3-v2,
+                    7.3-v3,
+                    7.3-v4,
+                    7.4-v1,
+                    7.4-v2,
+                    7.4-v4,
+                    7.4-v4.1,
+                    7.4-v5,
+                    8.0-base,
+                    8.0-medialibrary,
+                    8.1-base,
+                    8.1-medialibrary,
+                    8.2-base,
+                    8.2-medialibrary,
+                    8.3-base,
+                    8.3-medialibrary,
                 ]
 
         name: TAG-${{ matrix.tag }}
