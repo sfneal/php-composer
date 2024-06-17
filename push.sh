@@ -18,12 +18,23 @@ if [ "$TAG" != null ]
   then
     bash "${DIR}"/build.sh "${TAG}"
 
-    docker push stephenneal/php-composer:"${TAG}"
+    FILE="${DIR}"/"${TAG}"/_docker-tags.txt
 
-    # Confirm the Tag is NOT an Release Candidate before pushing
-    if [ "$PUSH_LATEST" != null ]; then
-        docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${LATEST}"
-        docker push stephenneal/php-composer:"${LATEST}"
+    # Check if image has multiple tags (indicated by file existence)
+    if [ -f "${FILE}" ]; then
+      echo "${TAG} directory has multiple Docker tags"
+
+      while IFS= read -r line; do
+        docker push stephenneal/php-composer:"${line}"
+      done < "${DIR}"/"${TAG}"/_docker-tags.txt
+    else
+      docker push stephenneal/php-composer:"${TAG}"
+
+      # Confirm the Tag is NOT an Release Candidate before pushing
+      if [ "$PUSH_LATEST" != null ]; then
+          docker tag stephenneal/php-composer:"${TAG}" stephenneal/php-composer:"${LATEST}"
+          docker push stephenneal/php-composer:"${LATEST}"
+      fi
     fi
 
 
@@ -42,12 +53,12 @@ if [ "$TAG" != null ]
     docker push stephenneal/php-composer:7.4-v4
     docker push stephenneal/php-composer:7.4-v4.1
     docker push stephenneal/php-composer:7.4-v5
-    docker push stephenneal/php-composer:8.0-v1
-    docker push stephenneal/php-composer:8.0-v2
-    docker push stephenneal/php-composer:8.1-v1
-    docker push stephenneal/php-composer:8.1-v2
-    docker push stephenneal/php-composer:8.2-v1
-    docker push stephenneal/php-composer:8.2-v2
-    docker push stephenneal/php-composer:8.3-v1
-    docker push stephenneal/php-composer:8.3-v2
+    docker push stephenneal/php-composer:8.0-base
+    docker push stephenneal/php-composer:8.0-medialibrary
+    docker push stephenneal/php-composer:8.1-base
+    docker push stephenneal/php-composer:8.1-medialibrary
+    docker push stephenneal/php-composer:8.2-base
+    docker push stephenneal/php-composer:8.2-medialibrary
+    docker push stephenneal/php-composer:8.3-base
+    docker push stephenneal/php-composer:8.3-medialibrary
 fi

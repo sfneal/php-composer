@@ -1,5 +1,4 @@
-# PHP 8 composer image that includes system dependencies for the spatie/medialibrary composer package
-FROM php:8.3-cli
+FROM php:8.2-cli
 MAINTAINER Stephen Neal <stephen@stephenneal.net>
 
 # Install dependencies
