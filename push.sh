@@ -53,12 +53,12 @@ if [ "$TAG" != null ]
     docker push stephenneal/php-composer:7.4-v4
     docker push stephenneal/php-composer:7.4-v4.1
     docker push stephenneal/php-composer:7.4-v5
-    docker push stephenneal/php-composer:8.0-v1
-    docker push stephenneal/php-composer:8.0-v2
-    docker push stephenneal/php-composer:8.1-v1
-    docker push stephenneal/php-composer:8.1-v2
-    docker push stephenneal/php-composer:8.2-v1
-    docker push stephenneal/php-composer:8.2-v2
-    docker push stephenneal/php-composer:8.3-v1
-    docker push stephenneal/php-composer:8.3-v2
+    docker push stephenneal/php-composer:8.0-base
+    docker push stephenneal/php-composer:8.0-medialibrary
+    docker push stephenneal/php-composer:8.1-base
+    docker push stephenneal/php-composer:8.1-medialibrary
+    docker push stephenneal/php-composer:8.2-base
+    docker push stephenneal/php-composer:8.2-medialibrary
+    docker push stephenneal/php-composer:8.3-base
+    docker push stephenneal/php-composer:8.3-medialibrary
 fi

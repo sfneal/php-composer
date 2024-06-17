@@ -33,7 +33,7 @@ if [ "$TAG" != null ]
   else
     docker build -t stephenneal/php-composer:7.1-v1 "${DIR}"/7.1-v1/
     docker build -t stephenneal/php-composer:7.2-v1 "${DIR}"/7.2-v1/
-#    docker build -t stephenneal/php-composer:7.3-v1 "${DIR}"/7.3-v1/
+    docker build -t stephenneal/php-composer:7.3-v1 "${DIR}"/7.3-v1/
     docker build -t stephenneal/php-composer:7.3-v2 "${DIR}"/7.3-v2/
     docker build -t stephenneal/php-composer:7.3-v3 "${DIR}"/7.3-v3/
     docker build -t stephenneal/php-composer:7.3-v4 "${DIR}"/7.3-v4/
@@ -42,12 +42,12 @@ if [ "$TAG" != null ]
     docker build -t stephenneal/php-composer:7.4-v4 "${DIR}"/7.4-v4/
     docker build -t stephenneal/php-composer:7.4-v4.1 "${DIR}"/7.4-v4.1/
     docker build -t stephenneal/php-composer:7.4-v5 "${DIR}"/7.4-v5/
-    docker build -t stephenneal/php-composer:8.0-v1 "${DIR}"/8.0-v1/
-    docker build -t stephenneal/php-composer:8.0-v2 "${DIR}"/8.0-v2/
-    docker build -t stephenneal/php-composer:8.1-v1 "${DIR}"/8.1-v1/
-    docker build -t stephenneal/php-composer:8.1-v2 "${DIR}"/8.1-v2/
-    docker build -t stephenneal/php-composer:8.2-v1 "${DIR}"/8.2-v1/
-    docker build -t stephenneal/php-composer:8.2-v2 "${DIR}"/8.2-v2/
-    docker build -t stephenneal/php-composer:8.3-v1 "${DIR}"/8.3-v1/
-    docker build -t stephenneal/php-composer:8.3-v2 "${DIR}"/8.3-v2/
+    docker build -t stephenneal/php-composer:8.0-base "${DIR}"/8.0-base/
+    docker build -t stephenneal/php-composer:8.0-medialibrary "${DIR}"/8.0-medialibrary/
+    docker build -t stephenneal/php-composer:8.1-base "${DIR}"/8.1-base/
+    docker build -t stephenneal/php-composer:8.1-medialibrary "${DIR}"/8.1-medialibrary/
+    docker build -t stephenneal/php-composer:8.2-base "${DIR}"/8.2-base/
+    docker build -t stephenneal/php-composer:8.2-medialibrary "${DIR}"/8.2-medialibrary/
+    docker build -t stephenneal/php-composer:8.3-base "${DIR}"/8.3-base/
+    docker build -t stephenneal/php-composer:8.3-medialibrary "${DIR}"/8.3-medialibrary/
 fi
