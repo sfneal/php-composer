@@ -1,5 +1,5 @@
 FROM php:8.3-cli
-MAINTAINER Stephen Neal <stephen@stephenneal.net>
+LABEL org.opencontainers.image.authors="stephen@stephenneal.net"
 
 # Install dependencies
 RUN apt-get update -y \

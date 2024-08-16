@@ -2,7 +2,7 @@
 FROM composer:1.9 AS composer
 
 FROM php:7.3.7
-MAINTAINER Stephen Neal <stephen@stephenneal.net>
+LABEL org.opencontainers.image.authors="stephen@stephenneal.net"
 
 # Install yarn & other deps
 RUN apt-get update -y \
