@@ -61,4 +61,6 @@ if [ "$TAG" != null ]
     docker push stephenneal/php-composer:8.2-medialibrary
     docker push stephenneal/php-composer:8.3-base
     docker push stephenneal/php-composer:8.3-medialibrary
+    docker push stephenneal/php-composer:8.4-base
+    docker push stephenneal/php-composer:8.4-medialibrary
 fi

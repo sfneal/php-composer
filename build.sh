@@ -50,4 +50,6 @@ if [ "$TAG" != null ]
     docker build -t stephenneal/php-composer:8.2-medialibrary "${DIR}"/8.2-medialibrary/
     docker build -t stephenneal/php-composer:8.3-base "${DIR}"/8.3-base/
     docker build -t stephenneal/php-composer:8.3-medialibrary "${DIR}"/8.3-medialibrary/
+    docker build -t stephenneal/php-composer:8.4-rc-base "${DIR}"/8.4-rc-base/
+    docker build -t stephenneal/php-composer:8.4-rc-medialibrary "${DIR}"/8.4-rc-medialibrary/
 fi
