@@ -1,13 +1,10 @@
-# PHP 8 composer image that includes system dependencies for the spatie/medialibrary composer package
-FROM php:8.4-rc-cli
+FROM php:8.4-cli
 LABEL org.opencontainers.image.authors="stephen@stephenneal.net"
 
 # Install dependencies
 RUN apt-get update -y \
     && apt-get install -y \
         g++ \
-    	gifsicle \
-    	jpegoptim \
         libfreetype6-dev \
 		libgmp-dev \
 		libicu-dev \
@@ -16,8 +13,6 @@ RUN apt-get update -y \
         libxpm-dev \
         libwebp-dev \
         libzip-dev \
-    	optipng \
-    	pngquant \
         unzip \
         zip \
         zlib1g-dev

@@ -31,8 +31,8 @@ jobs:
                     8.2-medialibrary,
                     8.3-base,
                     8.3-medialibrary,
-                    8.4-rc-base,
-                    8.4-rc-medialibrary,
+                    8.4-base,
+                    8.4-medialibrary,
                 ]
 
         name: ${{ matrix.tag }}
