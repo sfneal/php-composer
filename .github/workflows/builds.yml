@@ -34,7 +34,7 @@ jobs:
                     8.4-medialibrary,
                 ]
 
-        name: ${{ matrix.tag }}
+        name: ${{ matrix.tag }} / ${{ matrix.platform }}
 
         steps:
             -   name: Checkout code
