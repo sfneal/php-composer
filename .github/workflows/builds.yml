@@ -9,7 +9,7 @@ jobs:
             fail-fast: false
             matrix:
                 os: [ubuntu-latest]
-                platform: [linux/amd64, linux/arm64]
+                platform: ["linux/amd64", "linux/arm64"]
                 tag: [
                     7.1-v1,
                     7.2-v1,
