@@ -26,7 +26,10 @@ if [ "$TAG" != null ]
       echo "${COMMAND}"
       $(echo "${COMMAND}")
     else
-      docker build -t stephenneal/php-composer:"${TAG}" "${DIR}"/"${TAG}"/
+      docker buildx build \
+      	-t stephenneal/php-composer:"${TAG}" \
+      	--platform linux/amd64,linux/arm64 \
+      	"${DIR}"/"${TAG}"/
     fi
 
   # Build all images
