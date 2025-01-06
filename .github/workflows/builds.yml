@@ -39,6 +39,12 @@ jobs:
             -   name: Checkout code
                 uses: actions/checkout@v4
 
+            -   name: Install Docker buildx
+                id: buildx
+                uses: crazy-max/ghaction-docker-buildx@v1
+                with:
+                  version: latest
+
             -   name: Authenticate Docker Hub
                 run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login --username "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
