@@ -27,6 +27,7 @@ if [ "$TAG" != null ]
       $(echo "${COMMAND}")
     else
       docker buildx build \
+      	--load \
       	-t stephenneal/php-composer:"${TAG}" \
       	--platform linux/amd64,linux/arm64 \
       	"${DIR}"/"${TAG}"/
