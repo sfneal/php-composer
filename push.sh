@@ -13,8 +13,6 @@ if [ "$TAG" != null ]
 
   # Only build & push one image
   then
-    bash "${DIR}"/build.sh "${TAG}" "${PLATFORM}"
-
     FILE="${DIR}"/"${TAG}"/_docker-tags.txt
 
     # Check if image has multiple tags (indicated by file existence)
@@ -22,10 +20,18 @@ if [ "$TAG" != null ]
       echo "${TAG} directory has multiple Docker tags"
 
       while IFS= read -r line; do
-        docker push stephenneal/php-composer:"${line}"
+        docker buildx build \
+			--push \
+			-t stephenneal/php-composer:"${line}" \
+			--platform "${PLATFORM}" \
+			"${DIR}"/"${TAG}"/
       done < "${DIR}"/"${TAG}"/_docker-tags.txt
     else
-      docker push stephenneal/php-composer:"${TAG}"
+      docker buildx build \
+      	--push \
+      	-t stephenneal/php-composer:"${TAG}" \
+      	--platform "${PLATFORM}" \
+      	"${DIR}"/"${TAG}"/
     fi
 
 
