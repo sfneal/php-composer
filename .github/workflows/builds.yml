@@ -9,7 +9,6 @@ jobs:
             fail-fast: false
             matrix:
                 os: [ubuntu-latest]
-                platform: ["linux/amd64", "linux/arm64"]
                 tag: [
                     7.1-v1,
                     7.2-v1,
@@ -33,6 +32,7 @@ jobs:
                     8.4-base,
                     8.4-medialibrary,
                 ]
+                platform: ["linux/amd64", "linux/arm64"]
 
         name: ${{ matrix.tag }} / ${{ matrix.platform }}
 
